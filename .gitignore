@@ -1,0 +1,25 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+dist/
+build/
+*.egg-info/
+
+# Generated benchmark/profiling artifacts.
+benchmarking/inference/results/
+benchmarking/inference/scripts/bench_jobs.txt
+benchmarking/inference/data/*_trajectories.jsonl
+benchmarking/inference/data/coding_agent_prompts.jsonl
+benchmarking/results/
+profiling/results/
+*.ncu-rep
+*.qdrep
+*.nsys-rep
+
+# Local scratch state.
+.local/
+.cache/

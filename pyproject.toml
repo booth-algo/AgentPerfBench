@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentperfbench"
+version = "0.1.0"
+description = "Benchmarking and profiling tools for agentic LLM serving workloads."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+benchmark = [
+    "aiohttp>=3.9",
+    "numpy>=1.24",
+    "datasets>=2.18",
+    "transformers>=4.40",
+]
+profiling = [
+    "matplotlib>=3.8",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "torch>=2.2",
+    "transformers>=4.40",
+]
+dev = [
+    "aiohttp>=3.9",
+    "numpy>=1.24",
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["benchmarking/tests"]
+pythonpath = ["benchmarking/inference"]
+
+[tool.setuptools]
+packages = [
+    "profiling",
+    "profiling.ncu",
+    "src",
+    "src.benchmark",
+    "src.engines",
+    "src.workloads",
+]
+
+[tool.setuptools.package-dir]
+src = "benchmarking/inference/src"
